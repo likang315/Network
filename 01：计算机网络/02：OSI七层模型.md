@@ -12,7 +12,7 @@
 
 ##### 02：OSI（Open Systems Interconnection） 七层模型
 
-<img src="/Users/likang/Code/Git/Network/01：计算机网络/photos/OSI.png" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/likang315/Network/master/01：计算机网络/photos/OSI.png" style="zoom:80%;" />
 
 ###### 分层原理
 
