@@ -2,7 +2,9 @@
 
 ------
 
-##### 01：NAT：**N**etwork **A**ddress **T**ranslation 
+[TOC]
+
+##### 01：NAT：Network Address Translation 
 
 - 将私有IP 转换为公网IP
 
@@ -24,7 +26,7 @@
   - **没有什么是加中间层不能解决的，如果有，那就再加一层**
 - 解决方式：在**公网上**加一台服务器x，并暴露一个访问域名，再让内网的服务**主动**连接服务器x，这样NAT路由器上就有对应的**映射关系**。接着，所有人都去访问服务器x，服务器x将数据转发给内网机器，再原路返回响应，这样数据就都通了。这就是所谓的**内网穿透**。
 
-<img src="/Users/likang/Code/Git/Network/01：计算机网络/photos/nat.png" alt="nat" style="zoom:50%;" />
+<img src="https://github.com/likang315/Network/blob/master/01：计算机网络/photos/nat.png?raw=true" alt="nat" style="zoom:50%;" />
 
 ##### 06：抛开第三方，直连通信
 
@@ -38,4 +40,4 @@
 - **step8和step9以及step10**: 跟step5一样熟悉的配方，此时server再发消息给B，让B主动发`UDP`消息到A的外网IP地址和端口。NAT_B上也留下了关于A到映射关系，这时候由于之前NAT_A上有过关于B的映射关系，此时NAT_A就能正常接受B的数据包，并将其转发给A。到这里A和B就能正常进行数据通信了。这就是所谓的**NAT打洞**。
 - **step11**: 注意，之前我们都是用的**UDP数据包**，目的只是为了在两个局域网的NAT上**打个洞**出来，实际上大部分应用用的都是TCP连接，所以，这时候我们还需要在A主动向B发起TCP连接。到此，我们就完成了两端之间的通信。
 
-<img src="/Users/likang/Code/Git/Network/01：计算机网络/photos/nat-direct.png" alt="nat-direct" style="zoom:67%;" />
+<img src="https://github.com/likang315/Network/blob/master/01：计算机网络/photos/nat-direct.png?raw=true" alt="nat-direct" style="zoom:67%;" />
